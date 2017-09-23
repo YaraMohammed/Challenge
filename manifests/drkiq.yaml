@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: drkiq-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: drkiq
+    spec:
+      containers:
+      - name: drkiq
+        image: yaramohammed/drkiq
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - mountPath: .:/drkiq
+          name: drkiq-src
+        envFrom:
+        - configMapRef:
+            name: drkiq-env
+      volumes:
+      - name: drkiq-src
+        hostPath:
+          path: /var/drkiq-src  
+
