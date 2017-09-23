@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redis-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:3.0.5
+        ports:
+        - containerPort: 6397
+        volumeMounts:
+        - mountPath: /var/lib/redis/data
+          name: drkiq-redis
+      volumes:
+      - name: drkiq-redis
+        hostPath:
+          path: /var/drkiq-redis

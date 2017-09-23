@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:9.4.5
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: drkiq-postgres
+        env:
+          - name: POSTGRES_USER
+            value: drkiq
+          - name: POSTGRES_PASSWORD
+            value: yourpassword
+      volumes:
+      - name: drkiq-postgres
+        hostPath:
+          path: /var/drkiq-postgres
