@@ -25,5 +25,8 @@ module Drkiq
     config.active_job.queue_adapter = :sidekiq
 
     # ...
+    # include all subdirectories 
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]  
+
   end
 end
