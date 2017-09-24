@@ -23,7 +23,8 @@ to run in kubernetes
 ```
 kubectl create -f manifests
 ```
-the manifests contains deployments files as well as services for postgres , redis , drkiq and sidekiq
+the manifests contains deployments files as well as services for postgres , redis , drkiq and sidekiq 
+and a job to run rake db:create
 to check the pods and services are running
 ```
 kubectl get pods
