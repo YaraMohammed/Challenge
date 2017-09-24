@@ -22,4 +22,11 @@ Second part of the repo is the manifest directory wich cotaines kubernetes manif
 to run in kubernetes
 ```
 kubectl create -f manifests
-``
+```
+the manifests contains deployments files as well as services for postgres , redis , drkiq and sidekiq
+to check the pods and services are running
+```
+kubectl get pods
+kubectl get svc
+```
+now the application is accissable through the service drkiq and port 80
