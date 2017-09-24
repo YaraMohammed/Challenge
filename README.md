@@ -30,4 +30,4 @@ to check the pods and services are running
 kubectl get pods
 kubectl get svc
 ```
-now the application is accissable through the service drkiq and port 80
+now the application is accissable through the service drkiq
