@@ -19,11 +19,11 @@ spec:
         - name: LISTEN_ON
           value: 0.0.0.0:8000
         - name: DATABASE_URL
-          value: POSTGRES_SERVICE_HOST://drkiq:yourpassword@postgres:5432/drkiq?encoding=utf8&pool=5&timeout=5000
+          value: postgres://drkiq:yourpassword@postgres:5432/drkiq?encoding=utf8&pool=5&timeout=5000
         - name: CACHE_URL
-          value: REDIS_SERVICE_HOST://redis:6379/0
+          value: redis://redis:6379/0
         - name: JOB_WORKER_URL
-          value: REDIS_SERVICE_HOST://redis  
+          value: redis://redis  
         image: yaramohammed/drkiq
         name: db-job
       restartPolicy: Never
