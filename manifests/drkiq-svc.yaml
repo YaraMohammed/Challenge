@@ -5,6 +5,7 @@ metadata:
   labels:
     name: drkiq
 spec:
+  type: NodePort
   ports:
   - port: 8000
     targetPort: 8000
