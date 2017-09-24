@@ -15,8 +15,9 @@ spec:
         ports:
         - containerPort: 8000
         volumeMounts:
-        - mountPath: .:/drkiq
+        - mountPath: /drkiq
           name: drkiq-src
+        imagePullPolicy: Always
         env:
         - name: SECRET_TOKEN
           value: asecuretokenwouldnormallygohere
