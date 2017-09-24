@@ -14,12 +14,12 @@ spec:
         image: yaramohammed/drkiq
         ports:
         - containerPort: 8000
-        volumeMounts:
-        - mountPath: /drkiq
-          name: drkiq-src
+#        volumeMounts:
+#        - mountPath: /drkiq
+#          name: drkiq-src
         imagePullPolicy: Always
-        env:
-        - envFrom:
+#        env:
+        envFrom:
           - configMapRef:
               name: drkiq-config
 #        - name: SECRET_TOKEN
@@ -34,8 +34,8 @@ spec:
 #          value: REDIS_SERVICE_HOST://redis:6379/0
 #        - name: JOB_WORKER_URL
 #          value: REDIS_SERVICE_HOST://redis  
-      volumes:
-      - name: drkiq-src
-        hostPath:
-          path: /var/drkiq-src  
-
+#      volumes:
+#      - name: drkiq-src
+#        hostPath:
+#          path: /var/drkiq-src  
+#
